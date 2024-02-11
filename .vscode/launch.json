@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "lp_sharon",
+            "request": "launch",
+            "type": "dart",
+        },
+        {
+            "name": "lp_sharon (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+        },
+        {
+            "name": "lp_sharon (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+        }
+    ]
+}
