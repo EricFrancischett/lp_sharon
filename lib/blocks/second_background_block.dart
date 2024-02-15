@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/image_constants.dart';
+import 'package:lp_sharon/core/resolutions.dart';
 import 'package:lp_sharon/widgets/app_button.dart';
 import 'package:lp_sharon/widgets/blur_title.dart';
 
 class SecondBackgroundBlock extends StatelessWidget {
-  const SecondBackgroundBlock({super.key});
+  final CurrentResolution currentResolution;
+  const SecondBackgroundBlock({
+    super.key,
+    required this.currentResolution,
+  });
 
   @override
   Widget build(BuildContext context) {
+    bool isCellPhone = currentResolution == CurrentResolution.isCellPhone;
+    bool isTablet = currentResolution == CurrentResolution.isTablet;
     return Row(
       children: [
         Expanded(
@@ -26,11 +33,13 @@ class SecondBackgroundBlock extends StatelessWidget {
                 stops: [0, 0.1, 0.9, 1],
               ),
             ),
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fitWidth,
+                fit: (isCellPhone || isTablet)
+                    ? BoxFit.fitHeight
+                    : BoxFit.fitWidth,
                 opacity: 0.8,
-                image: AssetImage(
+                image: const AssetImage(
                   ImageConstants.background2,
                 ),
               ),
@@ -120,9 +129,9 @@ class SecondBackgroundBlock extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                const SizedBox(
-                  width: 315,
-                  child: AppButton(
+                SizedBox(
+                      width: isCellPhone? 250 : 320,
+                  child: const AppButton(
                     text: 'Quero me profissionalizar!',
                     fillColor: AppColors.amarelo,
                   ),

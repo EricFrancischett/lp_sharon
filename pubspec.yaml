@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^2.0.9
   marquee: ^2.2.3
   youtube_player_iframe: ^4.0.4
+  url_launcher: ^6.2.4
 
 dev_dependencies:
   flutter_test:

@@ -1,64 +1,77 @@
 import 'package:flutter/material.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/image_constants.dart';
+import 'package:lp_sharon/core/resolutions.dart';
 import 'package:lp_sharon/widgets/blur_title.dart';
 
 class GuestBlock extends StatelessWidget {
-  const GuestBlock({super.key});
+  final CurrentResolution currentResolution;
+  const GuestBlock({
+    super.key,
+    required this.currentResolution,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        BlurTitle(
-          title: 'COM PALESTRANTES ESPECIALISTAS NO ASSUNTO'.toUpperCase(),
-          fillColor: AppColors.rosa,
-        ),
-        const SizedBox(
-          height: 40,
-        ),
-        Wrap(
-          spacing: 15,
-          children: [
-            _buildGuestCard(
-              bgImagePath: ImageConstants.sharonPic,
-              name: 'Sharon\nStrapasson',
-              role: 'Social Media e\nEstratégias Digitais',
-              description:
-                  'Como usar as\nferramentas das\nredes sociais a\nseu favor.',
-            ),
-            _buildGuestCard(
-              bgImagePath: ImageConstants.thiagoPic,
-              name: 'Thiago\nZanona',
-              role: 'Branding Pessoal\ne Empresarial',
-              description:
-                  'Como o branding\nimpacta a\npercepção nas\nredes sociais.',
-            ),
-            _buildGuestCard(
-              bgImagePath: ImageConstants.lucianaPic,
-              name: 'Luciana\nBurko',
-              role: 'Gestão de\nMarca',
-              description:
-                  'Gestão de Marca e\nTécnicas para uma\nmarca pessoal e\nprofissional positiva\nnas redes sociais.',
-            ),
-            _buildGuestCard(
-              bgImagePath: ImageConstants.renataPic,
-              name: 'Renata\nGuimarães',
-              role: 'Empreendedorismo',
-              description:
-                  'Como não desviar\ndo foco, reduzir\nruídos na sua\ncomunicação e\nempreendedorismo.',
-            ),
-            _buildGuestCard(
-              bgImagePath: ImageConstants.vanessaPic,
-              name: 'Vanessa\nRichter',
-              role: 'Desenvolvimento\nPessoal e Profissional',
-              description: 'Sabotadores\ncomportamentais.',
-            ),
-          ],
-        ),
-      ],
+    bool isCellPhone = currentResolution == CurrentResolution.isCellPhone;
+    return Padding(
+      padding: isCellPhone
+          ? const EdgeInsets.symmetric(horizontal: 32)
+          : const EdgeInsets.all(0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          BlurTitle(
+            title: 'COM PALESTRANTES ESPECIALISTAS NO ASSUNTO'.toUpperCase(),
+            fillColor: AppColors.rosa,
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          Wrap(
+            spacing: 15,
+            runSpacing: 30,
+            alignment: WrapAlignment.center,
+            children: [
+              _buildGuestCard(
+                bgImagePath: ImageConstants.sharonPic,
+                name: 'Sharon\nStrapasson',
+                role: 'Social Media e\nEstratégias Digitais',
+                description:
+                    'Como usar as\nferramentas das\nredes sociais a\nseu favor.',
+              ),
+              _buildGuestCard(
+                bgImagePath: ImageConstants.thiagoPic,
+                name: 'Thiago\nZanona',
+                role: 'Branding Pessoal\ne Empresarial',
+                description:
+                    'Como o branding\nimpacta a\npercepção nas\nredes sociais.',
+              ),
+              _buildGuestCard(
+                bgImagePath: ImageConstants.lucianaPic,
+                name: 'Luciana\nBurko',
+                role: 'Gestão de\nMarca',
+                description:
+                    'Gestão de Marca e\nTécnicas para uma\nmarca pessoal e\nprofissional positiva\nnas redes sociais.',
+              ),
+              _buildGuestCard(
+                bgImagePath: ImageConstants.renataPic,
+                name: 'Renata\nGuimarães',
+                role: 'Empreendedorismo',
+                description:
+                    'Como não desviar\ndo foco, reduzir\nruídos na sua\ncomunicação e\nempreendedorismo.',
+              ),
+              _buildGuestCard(
+                bgImagePath: ImageConstants.vanessaPic,
+                name: 'Vanessa\nRichter',
+                role: 'Desenvolvimento\nPessoal e Profissional',
+                description: 'Sabotadores\ncomportamentais.',
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 

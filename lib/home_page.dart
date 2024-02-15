@@ -29,6 +29,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     CurrentResolution currentResolution =
         Resolutions.getResolution(context: context);
+    bool isCellPhone = currentResolution == CurrentResolution.isCellPhone;
     return Scaffold(
       backgroundColor: AppColors.preto,
       body: SingleChildScrollView(
@@ -36,66 +37,86 @@ class _HomePageState extends State<HomePage> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 60,
+            SizedBox(
+              height: isCellPhone?  60*0.8 : 60,
             ),
             IntroBlock(
               currentResolution: currentResolution,
             ),
-            const SizedBox(
-              height: 120,
+            SizedBox(
+              height: isCellPhone?  120*0.8 : 120,
             ),
             VideoBlock(
               currentResolution: currentResolution,
             ),
-            const SizedBox(
-              height: 80,
+            SizedBox(
+              height: isCellPhone?  80*0.8 : 80,
             ),
             GradientBarBlock(
               currentResolution: currentResolution,
             ),
-            const SizedBox(
-              height: 80,
+            SizedBox(
+              height: isCellPhone?  80*0.8 : 80,
             ),
-            const FirstBackgroundBlock(),
-            const SizedBox(
-              height: 80,
+            FirstBackgroundBlock(
+              currentResolution: currentResolution,
             ),
-            const IsForBlock(),
-            const SizedBox(
-              height: 160,
+            SizedBox(
+              height: isCellPhone?  80*0.8 : 80,
             ),
-            const LearnBlock(),
-            const SizedBox(
-              height: 160,
+            IsForBlock(
+              currentResolution: currentResolution,
             ),
-            const GuestBlock(),
-            const SizedBox(
-              height: 160,
+            SizedBox(
+              height: isCellPhone?  160*0.8 : 160,
             ),
-            const SecondBackgroundBlock(),
-            const SizedBox(
-              height: 160,
+            LearnBlock(
+              currentResolution: currentResolution,
             ),
-            const FeedbackBlock(),
-            const SizedBox(
-              height: 160,
+            SizedBox(
+              height: isCellPhone?  160*0.8 : 160,
             ),
-            const LastEditionBlock(),
-            const SizedBox(
-              height: 160,
+            GuestBlock(
+              currentResolution: currentResolution,
             ),
-            const AppointmentBlock(),
-            const SizedBox(
-              height: 160,
+            SizedBox(
+              height: isCellPhone?  160*0.8 : 160,
             ),
-            const ThirdBackgroundBlock(),
-            const SizedBox(
-              height: 100,
+            SecondBackgroundBlock(
+              currentResolution: currentResolution,
             ),
-            const EndBlock(),
-            const SizedBox(
-              height: 100,
+            SizedBox(
+              height: isCellPhone?  160*0.8 : 160,
+            ),
+            FeedbackBlock(
+              currentResolution: currentResolution,
+            ),
+            SizedBox(
+              height: isCellPhone?  160*0.8 : 160,
+            ),
+            LastEditionBlock(
+              currentResolution: currentResolution,
+            ),
+            SizedBox(
+              height: isCellPhone?  160*0.8 : 160,
+            ),
+            AppointmentBlock(
+              currentResolution: currentResolution,
+            ),
+            SizedBox(
+              height: isCellPhone?  160*0.8 : 160,
+            ),
+            ThirdBackgroundBlock(
+              currentResolution: currentResolution,
+            ),
+            SizedBox(
+              height: isCellPhone?  100*0.8 : 100,
+            ),
+            EndBlock(
+              currentResolution: currentResolution,
+            ),
+            SizedBox(
+              height: isCellPhone?  100*0.8 : 100,
             )
           ],
         ),

@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/image_constants.dart';
+import 'package:lp_sharon/core/resolutions.dart';
 import 'package:lp_sharon/widgets/app_button.dart';
 
 class ThirdBackgroundBlock extends StatelessWidget {
-  const ThirdBackgroundBlock({super.key});
+  final CurrentResolution currentResolution;
+  const ThirdBackgroundBlock({
+    super.key,
+    required this.currentResolution,
+  });
 
   @override
   Widget build(BuildContext context) {
+    bool isCellPhone = currentResolution == CurrentResolution.isCellPhone;
+    bool isTablet = currentResolution == CurrentResolution.isTablet;
     return Row(
       children: [
         Expanded(
@@ -25,11 +32,13 @@ class ThirdBackgroundBlock extends StatelessWidget {
                 stops: [0, 0.1, 0.9, 1],
               ),
             ),
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fitWidth,
+                fit: (isCellPhone || isTablet)
+                    ? BoxFit.fitHeight
+                    : BoxFit.fitWidth,
                 opacity: 0.8,
-                image: AssetImage(
+                image: const AssetImage(
                   ImageConstants.background3,
                 ),
               ),
@@ -64,9 +73,9 @@ class ThirdBackgroundBlock extends StatelessWidget {
                 const SizedBox(
                   height: 80,
                 ),
-                const SizedBox(
-                  width: 320,
-                  child: AppButton(
+                SizedBox(
+                  width: isCellPhone ? 250 : 320,
+                  child: const AppButton(
                     text: 'Adquira seu ingresso aqui!',
                     fillColor: AppColors.amarelo,
                   ),

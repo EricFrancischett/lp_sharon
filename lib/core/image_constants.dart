@@ -17,9 +17,11 @@ class ImageConstants {
   static const String lucianaPic = 'images/luciana_pic.png';
   static const String vanessaPic = 'images/vanessa_pic.png';
   static const String feedbackHorizontal = 'images/feedback_horizontal.png';
+  static const String feedbackvertical = 'images/feedback_vertical.png';
   static const String bigAt = 'images/big_at.png';
   static const String smallAt = 'images/small_at.png';
-  static const String lastEditionPic = 'images/last_edition_pic.png';
+  static const String lastEditionPicHorizontal = 'images/last_edition_pic_horizontal.png';
+  static const String lastEditionPicVertical = 'images/last_edition_pic_vertical.png';
   static const String bell = 'images/bell.png';
   static const String location = 'images/location.png';
   static const String instaLogo = 'images/insta_logo.png';

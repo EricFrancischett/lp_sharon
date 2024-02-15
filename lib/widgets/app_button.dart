@@ -16,38 +16,44 @@ class AppButton extends StatelessWidget {
     CurrentResolution currentResolution =
         Resolutions.getResolution(context: context);
     bool isCellPhone = currentResolution == CurrentResolution.isCellPhone;
-    return isCellPhone
-        ? _buildPhoneButton()
-        : Container(
-          height: 36,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-            ),
-            decoration: BoxDecoration(
-              color: fillColor,
-              borderRadius: BorderRadius.circular(8),
-              boxShadow: [
-                BoxShadow(
-                  blurStyle: BlurStyle.solid,
-                  color: fillColor,
-                  blurRadius: 9.0,
-                  spreadRadius: 9.0,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {},
+        child: isCellPhone
+            ? _buildPhoneButton()
+            : Container(
+                height: 36,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
                 ),
-              ],
-            ),
-            alignment: Alignment.center,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4),
-              child: Text(
-                text,
-                style: const TextStyle(
-                  color: AppColors.preto,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w800,
+                decoration: BoxDecoration(
+                  color: fillColor,
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                      blurStyle: BlurStyle.solid,
+                      color: fillColor,
+                      blurRadius: 9.0,
+                      spreadRadius: 9.0,
+                    ),
+                  ],
+                ),
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Text(
+                    text,
+                    style: const TextStyle(
+                      color: AppColors.preto,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          );
+      ),
+    );
   }
 
   Widget _buildPhoneButton() {

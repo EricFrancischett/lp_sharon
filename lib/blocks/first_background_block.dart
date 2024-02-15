@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/image_constants.dart';
+import 'package:lp_sharon/core/resolutions.dart';
 import 'package:lp_sharon/widgets/app_button.dart';
 import 'package:lp_sharon/widgets/blur_title.dart';
 
 class FirstBackgroundBlock extends StatelessWidget {
-  const FirstBackgroundBlock({super.key});
+  final CurrentResolution currentResolution;
+  const FirstBackgroundBlock({
+    super.key,
+    required this.currentResolution,
+  });
 
   @override
   Widget build(BuildContext context) {
+    bool isCellPhone = currentResolution == CurrentResolution.isCellPhone;
+    bool isTablet = currentResolution == CurrentResolution.isTablet;
     return Row(
       children: [
         Expanded(
@@ -26,11 +33,13 @@ class FirstBackgroundBlock extends StatelessWidget {
                 stops: [0, 0.1, 0.9, 1],
               ),
             ),
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fitWidth,
+                fit: (isCellPhone || isTablet)
+                    ? BoxFit.fitHeight
+                    : BoxFit.fitWidth,
                 opacity: 0.8,
-                image: AssetImage(
+                image: const AssetImage(
                   ImageConstants.background1,
                 ),
               ),
@@ -51,27 +60,29 @@ class FirstBackgroundBlock extends StatelessWidget {
                 ),
                 SizedBox(
                   width: 520,
-                  child: Wrap(
-                    spacing: 80,
-                    runSpacing: 40,
-                    children: [
-                      _buildCheckMessage(
-                        description:
-                            'Evento de 10 horas\ntotalmente presencial\ne imersivo',
-                      ),
-                      _buildCheckMessage(
-                        description:
-                            'Ambiente cercado pela\nnatureza potencializando\nseus aprendizados.',
-                      ),
-                      _buildCheckMessage(
-                        description:
-                            'Aprimore suas\nhabilidades técnicas\ne comportamentais.',
-                      ),
-                      _buildCheckMessage(
-                        description:
-                            'Fortaleça seu networking\nconectando-se com\nprofissionais de diversas\náreas ao longo do dia.',
-                      ),
-                    ],
+                  child: Center(
+                    child: Wrap(
+                      spacing: 80,
+                      runSpacing: 40,
+                      children: [
+                        _buildCheckMessage(
+                          description:
+                              'Evento de 10 horas\ntotalmente presencial\ne imersivo',
+                        ),
+                        _buildCheckMessage(
+                          description:
+                              'Ambiente cercado pela\nnatureza potencializando\nseus aprendizados.',
+                        ),
+                        _buildCheckMessage(
+                          description:
+                              'Aprimore suas\nhabilidades técnicas\ne comportamentais.',
+                        ),
+                        _buildCheckMessage(
+                          description:
+                              'Fortaleça seu networking\nconectando-se com\nprofissionais de diversas\náreas ao longo do dia.',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -92,9 +103,9 @@ class FirstBackgroundBlock extends StatelessWidget {
                 Stack(
                   clipBehavior: Clip.none,
                   children: [
-                    const SizedBox(
-                      width: 313,
-                      child: AppButton(
+                    SizedBox(
+                      width: isCellPhone? 230 : 313,
+                      child: const AppButton(
                         text: 'Quero comprar!',
                         fillColor: AppColors.amarelo,
                       ),

@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/resolutions.dart';
@@ -48,6 +50,7 @@ class _VideoBlockState extends State<VideoBlock> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: YoutubePlayer(
+                gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
                 controller: _controller,
                 aspectRatio: 16 / 9,
               ),
