@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/image_constants.dart';
 import 'package:lp_sharon/core/resolutions.dart';
+import 'package:lp_sharon/core/url_contants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class EndBlock extends StatelessWidget {
@@ -53,8 +54,11 @@ class EndBlock extends StatelessWidget {
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () async {
-                    await launchUrl(Uri.parse(
-                        'https://www.instagram.com/otreinamentoquetransforma?igsh=MTJ1OHRnamRyOWcyag=='));
+                    await launchUrl(
+                      Uri.parse(
+                        UrlConstants.instaLink,
+                      ),
+                    );
                   },
                   child: Image.asset(
                     ImageConstants.instaLogo,
@@ -70,8 +74,11 @@ class EndBlock extends StatelessWidget {
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () async {
-                    await launchUrl(Uri.parse(
-                        'https://api.whatsapp.com/send?phone=+5541992853040&text=Oii%2C+quero+participar+do+treinamento%21'));
+                    await launchUrl(
+                      Uri.parse(
+                        UrlConstants.wppLink,
+                      ),
+                    );
                   },
                   child: Image.asset(
                     ImageConstants.whatsLogo,
@@ -86,7 +93,13 @@ class EndBlock extends StatelessWidget {
               MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () async {
+                    await launchUrl(
+                      Uri.parse(
+                        UrlConstants.symplaLink,
+                      ),
+                    );
+                  },
                   child: Image.asset(
                     ImageConstants.symplaLogo,
                     width: isCellPhone ? 40 : 63,

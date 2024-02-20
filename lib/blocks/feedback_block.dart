@@ -121,7 +121,7 @@ class FeedbackBlock extends StatelessWidget {
           Transform.translate(
             offset: const Offset(0, -18),
             child: SizedBox(
-              width: isCellPhone ? 240 : 320,
+              width: isCellPhone ? 240 : 340,
               child: const AppButton(
                 text: 'Adquira seu ingresso aqui!',
                 fillColor: AppColors.rosa,

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/image_constants.dart';
 import 'package:lp_sharon/core/resolutions.dart';
+import 'package:lp_sharon/core/url_contants.dart';
 import 'package:lp_sharon/widgets/app_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AppointmentBlock extends StatelessWidget {
   final CurrentResolution currentResolution;
@@ -89,48 +91,72 @@ class AppointmentBlock extends StatelessWidget {
   }
 
   Widget _buildMap() {
-    return Stack(
-      clipBehavior: Clip.none,
-      alignment: Alignment.topRight,
-      children: [
-        Image.asset(
-          ImageConstants.location,
-          width: 278,
-          height: 246,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () async {
+          await launchUrl(
+            Uri.parse(
+              UrlConstants.mapLink,
+            ),
+          );
+        },
+        child: Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.topRight,
+          children: [
+            Image.asset(
+              ImageConstants.location,
+              width: 278,
+              height: 246,
+            ),
+            Positioned(
+              top: -72,
+              right: -82,
+              child: Image.asset(
+                ImageConstants.bell,
+                width: 164,
+                height: 164,
+              ),
+            ),
+          ],
         ),
-        Positioned(
-          top: -72,
-          right: -82,
-          child: Image.asset(
-            ImageConstants.bell,
-            width: 164,
-            height: 164,
-          ),
-        ),
-      ],
+      ),
     );
   }
 
   Widget _buildMapPhone() {
-    return Stack(
-      clipBehavior: Clip.none,
-      alignment: Alignment.topRight,
-      children: [
-        Image.asset(
-          ImageConstants.location,
-          width: 278,
-          height: 246,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () async {
+          await launchUrl(
+            Uri.parse(
+              UrlConstants.mapLink,
+            ),
+          );
+        },
+        child: Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.topRight,
+          children: [
+            Image.asset(
+              ImageConstants.location,
+              width: 278,
+              height: 246,
+            ),
+            Positioned(
+              top: -36,
+              right: -41,
+              child: Image.asset(
+                ImageConstants.bell,
+                width: 80,
+                height: 80,
+              ),
+            ),
+          ],
         ),
-        Positioned(
-          top: -36,
-          right: -41,
-          child: Image.asset(
-            ImageConstants.bell,
-            width: 80,
-            height: 80,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

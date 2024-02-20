@@ -1,3 +1,7 @@
-2024/02/14-22:20:31.867 a707 Reusing MANIFEST /private/var/folders/7n/1vnp_56d0mb7dy0b75_5ys3m0000gn/T/flutter_tools.UolvUr/flutter_tools_chrome_device.crzyLL/Default/WebStorage/14/IndexedDB/indexeddb.leveldb/MANIFEST-000001
-2024/02/14-22:20:31.867 a707 Recovering log #11
-2024/02/14-22:20:31.875 a707 Reusing old log /private/var/folders/7n/1vnp_56d0mb7dy0b75_5ys3m0000gn/T/flutter_tools.UolvUr/flutter_tools_chrome_device.crzyLL/Default/WebStorage/14/IndexedDB/indexeddb.leveldb/000011.log 
+2024/02/19-21:04:50.961 b103 Reusing MANIFEST /private/var/folders/7n/1vnp_56d0mb7dy0b75_5ys3m0000gn/T/flutter_tools.i5AVXj/flutter_tools_chrome_device.gQeUe5/Default/WebStorage/14/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/02/19-21:04:50.962 b103 Recovering log #11
+2024/02/19-21:04:50.971 b103 Reusing old log /private/var/folders/7n/1vnp_56d0mb7dy0b75_5ys3m0000gn/T/flutter_tools.i5AVXj/flutter_tools_chrome_device.gQeUe5/Default/WebStorage/14/IndexedDB/indexeddb.leveldb/000011.log 
+2024/02/19-21:04:50.971 b103 Delete type=0 #7
+2024/02/19-21:04:50.971 b103 Delete type=0 #4
+2024/02/19-21:04:50.971 b103 Delete type=2 #5
+2024/02/19-21:04:50.971 b103 Delete type=2 #9

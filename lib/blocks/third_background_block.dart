@@ -74,7 +74,7 @@ class ThirdBackgroundBlock extends StatelessWidget {
                   height: 80,
                 ),
                 SizedBox(
-                  width: isCellPhone ? 250 : 320,
+                  width: isCellPhone ? 250 : 340,
                   child: const AppButton(
                     text: 'Adquira seu ingresso aqui!',
                     fillColor: AppColors.amarelo,

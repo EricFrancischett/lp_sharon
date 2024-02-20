@@ -5,18 +5,36 @@
             "name": "lp_sharon",
             "request": "launch",
             "type": "dart",
+            "args": [
+                "--dart-define=SYMPLA_LINK=https://www.sympla.com.br/redes-sociais-do-basico-ao-profissional__2347487",
+                "--dart-define=INSTA_LINK=https://www.instagram.com/otreinamentoquetransforma?igsh=MTJ1OHRnamRyOWcyag==",
+                "--dart-define=WPP_LINK=https://api.whatsapp.com/send?phone=+5541992853040&text=Oii%2C+quero+participar+do+treinamento%21",
+                "--dart-define=MAP_LINK=https://www.google.com/maps/place/Ch%C3%A1cara+Sentinela+do+Imbuial/@-25.3019757,-49.1696814,14.17z/data=!4m6!3m5!1s0x94dce98de5f2b853:0x59e2d1ab54f204d0!8m2!3d-25.2971436!4d-49.1629205!16s%2Fg%2F11fvqxxbnb?entry=ttu",
+            ]
         },
         {
             "name": "lp_sharon (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile",
+            "args": [
+                "--dart-define=SYMPLA_LINK=https://www.sympla.com.br/redes-sociais-do-basico-ao-profissional__2347487",
+                "--dart-define=INSTA_LINK=https://www.instagram.com/otreinamentoquetransforma?igsh=MTJ1OHRnamRyOWcyag==",
+                "--dart-define=WPP_LINK=https://api.whatsapp.com/send?phone=+5541992853040&text=Oii%2C+quero+participar+do+treinamento%21",
+                "--dart-define=MAP_LINK=https://www.google.com/maps/place/Ch%C3%A1cara+Sentinela+do+Imbuial/@-25.3019757,-49.1696814,14.17z/data=!4m6!3m5!1s0x94dce98de5f2b853:0x59e2d1ab54f204d0!8m2!3d-25.2971436!4d-49.1629205!16s%2Fg%2F11fvqxxbnb?entry=ttu",
+            ]
         },
         {
             "name": "lp_sharon (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
+            "args": [
+                "--dart-define=SYMPLA_LINK=https://www.sympla.com.br/redes-sociais-do-basico-ao-profissional__2347487",
+                "--dart-define=INSTA_LINK=https://www.instagram.com/otreinamentoquetransforma?igsh=MTJ1OHRnamRyOWcyag==",
+                "--dart-define=WPP_LINK=https://api.whatsapp.com/send?phone=+5541992853040&text=Oii%2C+quero+participar+do+treinamento%21",
+                "--dart-define=MAP_LINK=https://www.google.com/maps/place/Ch%C3%A1cara+Sentinela+do+Imbuial/@-25.3019757,-49.1696814,14.17z/data=!4m6!3m5!1s0x94dce98de5f2b853:0x59e2d1ab54f204d0!8m2!3d-25.2971436!4d-49.1629205!16s%2Fg%2F11fvqxxbnb?entry=ttu",
+            ]
         }
     ]
 }

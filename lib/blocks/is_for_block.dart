@@ -145,7 +145,7 @@ class IsForBlock extends StatelessWidget {
             height: 40,
           ),
           const SizedBox(
-            width: 260,
+            width: 280,
             child: AppButton(
               text: 'Eu quero fazer parte!',
               fillColor: AppColors.rosa,

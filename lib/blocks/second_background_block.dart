@@ -130,7 +130,7 @@ class SecondBackgroundBlock extends StatelessWidget {
                   height: 40,
                 ),
                 SizedBox(
-                      width: isCellPhone? 250 : 320,
+                      width: isCellPhone? 250 : 340,
                   child: const AppButton(
                     text: 'Quero me profissionalizar!',
                     fillColor: AppColors.amarelo,
