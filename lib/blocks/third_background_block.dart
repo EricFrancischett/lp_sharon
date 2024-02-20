@@ -52,7 +52,6 @@ class ThirdBackgroundBlock extends StatelessWidget {
                 _buildPriceCard(
                   price: 'R\$249',
                   round: '1 LOTE',
-                  cents: ',90',
                 ),
                 const SizedBox(
                   height: 30,
@@ -60,7 +59,6 @@ class ThirdBackgroundBlock extends StatelessWidget {
                 _buildPriceCard(
                   price: 'R\$349',
                   round: '2 LOTE',
-                  cents: ',90',
                 ),
                 const SizedBox(
                   height: 30,
@@ -68,7 +66,6 @@ class ThirdBackgroundBlock extends StatelessWidget {
                 _buildPriceCard(
                   price: 'R\$449',
                   round: '3 LOTE',
-                  cents: ',90',
                 ),
                 const SizedBox(
                   height: 80,
@@ -91,8 +88,10 @@ class ThirdBackgroundBlock extends StatelessWidget {
     );
   }
 
-  Widget _buildPriceCard(
-      {required String price, required String round, required String cents}) {
+  Widget _buildPriceCard({
+    required String price,
+    required String round,
+  }) {
     return Stack(
       clipBehavior: Clip.none,
       alignment: Alignment.centerLeft,
@@ -125,17 +124,6 @@ class ThirdBackgroundBlock extends StatelessWidget {
                       color: AppColors.preto,
                       fontSize: 44,
                       fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: Text(
-                      cents,
-                      style: const TextStyle(
-                        color: AppColors.preto,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
                     ),
                   ),
                 ],
