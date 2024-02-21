@@ -276,7 +276,7 @@ class _IntroBlockState extends State<IntroBlock> {
           height: 60,
         ),
         const SizedBox(
-          width: 340,
+          width: 350,
           child: AppButton(
             text: 'Quero garantir minha vaga!',
             fillColor: AppColors.amarelo,

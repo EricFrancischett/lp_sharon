@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/image_constants.dart';
 import 'package:lp_sharon/core/resolutions.dart';
-import 'package:lp_sharon/core/url_contants.dart';
 import 'package:lp_sharon/widgets/app_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -97,7 +96,7 @@ class AppointmentBlock extends StatelessWidget {
         onTap: () async {
           await launchUrl(
             Uri.parse(
-              UrlConstants.mapLink,
+              'https://www.google.com/maps/place/Ch%C3%A1cara+Sentinela+do+Imbuial/@-25.3019757,-49.1696814,14.17z/data=!4m6!3m5!1s0x94dce98de5f2b853:0x59e2d1ab54f204d0!8m2!3d-25.2971436!4d-49.1629205!16s%2Fg%2F11fvqxxbnb?entry=ttu',
             ),
           );
         },
@@ -132,7 +131,7 @@ class AppointmentBlock extends StatelessWidget {
         onTap: () async {
           await launchUrl(
             Uri.parse(
-              UrlConstants.mapLink,
+              '--dart-define=MAP_LINK=https://www.google.com/maps/place/Ch%C3%A1cara+Sentinela+do+Imbuial/@-25.3019757,-49.1696814,14.17z/data=!4m6!3m5!1s0x94dce98de5f2b853:0x59e2d1ab54f204d0!8m2!3d-25.2971436!4d-49.1629205!16s%2Fg%2F11fvqxxbnb?entry=ttu',
             ),
           );
         },
