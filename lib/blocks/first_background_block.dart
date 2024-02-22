@@ -50,10 +50,13 @@ class FirstBackgroundBlock extends StatelessWidget {
                 const SizedBox(
                   height: 80,
                 ),
-                BlurTitle(
-                  title: 'Saia do básico...\nbusque pelo profissional!'
-                      .toUpperCase(),
-                  fillColor: AppColors.amarelo,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: BlurTitle(
+                    title: 'Saia do básico...\nbusque pelo profissional!'
+                        .toUpperCase(),
+                    fillColor: AppColors.amarelo,
+                  ),
                 ),
                 const SizedBox(
                   height: 40,
