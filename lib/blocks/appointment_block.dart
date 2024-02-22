@@ -131,7 +131,7 @@ class AppointmentBlock extends StatelessWidget {
         onTap: () async {
           await launchUrl(
             Uri.parse(
-              '--dart-define=MAP_LINK=https://www.google.com/maps/place/Ch%C3%A1cara+Sentinela+do+Imbuial/@-25.3019757,-49.1696814,14.17z/data=!4m6!3m5!1s0x94dce98de5f2b853:0x59e2d1ab54f204d0!8m2!3d-25.2971436!4d-49.1629205!16s%2Fg%2F11fvqxxbnb?entry=ttu',
+              'https://www.google.com/maps/place/Ch%C3%A1cara+Sentinela+do+Imbuial/@-25.3019757,-49.1696814,14.17z/data=!4m6!3m5!1s0x94dce98de5f2b853:0x59e2d1ab54f204d0!8m2!3d-25.2971436!4d-49.1629205!16s%2Fg%2F11fvqxxbnb?entry=ttu',
             ),
           );
         },

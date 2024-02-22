@@ -55,10 +55,10 @@ class EndBlock extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () async {
                     await launchUrl(
-                      Uri.parse(
-                        UrlConstants.instaLink,
-                      ),
-                    );
+                        Uri.parse(
+                          UrlConstants.instaLink,
+                        ),
+                        mode: LaunchMode.externalApplication);
                   },
                   child: Image.asset(
                     ImageConstants.instaLogo,
@@ -75,10 +75,10 @@ class EndBlock extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () async {
                     await launchUrl(
-                      Uri.parse(
-                        UrlConstants.wppLink,
-                      ),
-                    );
+                        Uri.parse(
+                          UrlConstants.wppLink,
+                        ),
+                        mode: LaunchMode.externalApplication);
                   },
                   child: Image.asset(
                     ImageConstants.whatsLogo,

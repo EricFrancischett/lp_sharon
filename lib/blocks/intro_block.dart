@@ -1,14 +1,12 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:lp_sharon/core/app_colors.dart';
 import 'package:lp_sharon/core/image_constants.dart';
 import 'package:lp_sharon/core/resolutions.dart';
 import 'package:lp_sharon/widgets/app_button.dart';
+import 'package:lp_sharon/widgets/app_counter.dart';
 import 'package:marquee/marquee.dart';
 
-class IntroBlock extends StatefulWidget {
+class IntroBlock extends StatelessWidget {
   final CurrentResolution currentResolution;
   const IntroBlock({
     super.key,
@@ -16,28 +14,8 @@ class IntroBlock extends StatefulWidget {
   });
 
   @override
-  State<IntroBlock> createState() => _IntroBlockState();
-}
-
-class _IntroBlockState extends State<IntroBlock> {
-  final DateTime _eventDate = DateTime(2024, 5, 19, 9, 0, 0);
-  // ignore: unused_field
-  late Timer _timer;
-
-  @override
-  void initState() {
-    _timer = Timer.periodic(
-      const Duration(seconds: 1),
-      (timer) {
-        setState(() {});
-      },
-    );
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    switch (widget.currentResolution) {
+    switch (currentResolution) {
       case CurrentResolution.isWeb:
         return _buildWebVersion();
       case CurrentResolution.isTablet:
@@ -74,7 +52,7 @@ class _IntroBlockState extends State<IntroBlock> {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          SvgPicture.asset(
+                          Image.asset(
                             ImageConstants.logoSharon,
                             width: 237,
                             height: 61,
@@ -129,9 +107,7 @@ class _IntroBlockState extends State<IntroBlock> {
                     const SizedBox(
                       height: 27,
                     ),
-                    _buildCounter(
-                      eventDate: _eventDate,
-                    ),
+                    const AppCounter()
                   ],
                 ),
               ),
@@ -195,7 +171,7 @@ class _IntroBlockState extends State<IntroBlock> {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          SvgPicture.asset(
+                          Image.asset(
                             ImageConstants.logoSharon,
                             width: 237,
                             height: 61,
@@ -285,9 +261,7 @@ class _IntroBlockState extends State<IntroBlock> {
         const SizedBox(
           height: 27,
         ),
-        _buildCounter(
-          eventDate: _eventDate,
-        ),
+        const AppCounter()
       ],
     );
   }
@@ -326,7 +300,7 @@ class _IntroBlockState extends State<IntroBlock> {
                           const SizedBox(
                             height: 40,
                           ),
-                          SvgPicture.asset(
+                          Image.asset(
                             ImageConstants.logoSharon,
                             width: 155,
                             height: 40,
@@ -394,12 +368,12 @@ class _IntroBlockState extends State<IntroBlock> {
         const SizedBox(
           height: 20,
         ),
-        SizedBox(
+        const SizedBox(
           width: 320,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
+              Text(
                 '19 de maio | 9h às 19h\nChácara Sentinela | Colombo',
                 style: TextStyle(
                   color: AppColors.cinza,
@@ -409,127 +383,23 @@ class _IntroBlockState extends State<IntroBlock> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(
+              SizedBox(
                 height: 17,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 300,
                 child: AppButton(
                   text: 'Quero garantir minha vaga!',
                   fillColor: AppColors.amarelo,
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
-              _buildCounter(
-                eventDate: _eventDate,
-              ),
+              AppCounter()
             ],
           ),
         )
-      ],
-    );
-  }
-
-  Widget _buildCounter({required DateTime eventDate}) {
-    final Duration difference = eventDate.difference(DateTime.now());
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              '${difference.inDays}',
-              style: const TextStyle(
-                color: AppColors.cinza,
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            const Text(
-              'DIAS',
-              style: TextStyle(
-                color: AppColors.cinza,
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          width: 24,
-        ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              '${difference.inHours.remainder(24)}',
-              style: const TextStyle(
-                color: AppColors.cinza,
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            const Text(
-              'HORAS',
-              style: TextStyle(
-                color: AppColors.cinza,
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          width: 24,
-        ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              '${difference.inMinutes.remainder(60)}',
-              style: const TextStyle(
-                color: AppColors.cinza,
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            const Text(
-              'MINUTOS',
-              style: TextStyle(
-                color: AppColors.cinza,
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          width: 24,
-        ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              '${difference.inSeconds.remainder(60)}',
-              style: const TextStyle(
-                color: AppColors.cinza,
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            const Text(
-              'SEGUNDOS',
-              style: TextStyle(
-                color: AppColors.cinza,
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
       ],
     );
   }
