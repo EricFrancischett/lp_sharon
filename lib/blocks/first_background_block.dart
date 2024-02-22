@@ -67,7 +67,7 @@ class FirstBackgroundBlock extends StatelessWidget {
                       children: [
                         _buildCheckMessage(
                           description:
-                              'Evento de 10 horas\ntotalmente presencial\ne imersivo',
+                              'Evento de 10 horas\ntotalmente presencial\ne imersivo.',
                         ),
                         _buildCheckMessage(
                           description:

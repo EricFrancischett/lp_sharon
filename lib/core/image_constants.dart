@@ -1,5 +1,5 @@
 class ImageConstants {
-  static const String logoSharon = 'images/logo_sharon.svg';
+  static const String logoSharon = 'images/logo_sharon.png';
   static const String check = 'images/check.png';
   static const String verified = 'images/verified.png';
   static const String hashtag = 'images/hashtag.png';

@@ -131,7 +131,7 @@ class IsForBlock extends StatelessWidget {
               children: [
                 TextSpan(
                   text:
-                      '  entusiastas a trabalhar${isCellPhone ? '\n' : ''}na área de social media',
+                      '  entusiastas a trabalhar${isCellPhone ? '\n' : ' '}na área de social media',
                   style: const TextStyle(
                     fontWeight: FontWeight.w500,
                     color: AppColors.branco,
