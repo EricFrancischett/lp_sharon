@@ -9,6 +9,7 @@
                 "--dart-define=SYMPLA_LINK=https://www.sympla.com.br/redes-sociais-do-basico-ao-profissional__2347487",
                 "--dart-define=INSTA_LINK=https://www.instagram.com/otreinamentoquetransforma?igsh=MTJ1OHRnamRyOWcyag==",
                 "--dart-define=WPP_LINK=https://api.whatsapp.com/send?phone=+5541992853040&text=Oii%2C+quero+participar+do+treinamento%21",
+                "--release",
             ]
         },
         {
@@ -20,6 +21,7 @@
                 "--dart-define=SYMPLA_LINK=https://www.sympla.com.br/redes-sociais-do-basico-ao-profissional__2347487",
                 "--dart-define=INSTA_LINK=https://www.instagram.com/otreinamentoquetransforma?igsh=MTJ1OHRnamRyOWcyag==",
                 "--dart-define=WPP_LINK=https://api.whatsapp.com/send?phone=+5541992853040&text=Oii%2C+quero+participar+do+treinamento%21",
+                "--release",
             ]
         },
         {
@@ -31,6 +33,7 @@
                 "--dart-define=SYMPLA_LINK=https://www.sympla.com.br/redes-sociais-do-basico-ao-profissional__2347487",
                 "--dart-define=INSTA_LINK=https://www.instagram.com/otreinamentoquetransforma?igsh=MTJ1OHRnamRyOWcyag==",
                 "--dart-define=WPP_LINK=https://api.whatsapp.com/send?phone=+5541992853040&text=Oii%2C+quero+participar+do+treinamento%21",
+                "--release",
             ]
         }
     ]
